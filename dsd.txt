@@ -1,0 +1,26 @@
+Computer Laboratory Resources Inventory System PHP MySql Source Code
+
+keywords:
+Computer Laboratory Resources Inventory System PHP MySql Source Code,Computer Laboratory Resources Inventory System PHP MySql ,Computer Laboratory Resources Inventory System PHP,Computer Laboratory Resources Inventory System ,Computer Laboratory Resources Inventory ,Computer Laboratory Resources ,Computer Laboratory.
+Computer 
+
+This is a web-based computer laboratory resources inventory system,made using web programming approach like php,mysql,javascript,ajax and html. The administrator of this computer laboratory resources inventory system can add,update and delete devices that will be available for the computer laboratory. It can also generate reports for the device in every location.
+
+User login:
+username: admin
+password: admin
+
+
+Instructions:
+1. Download the source code.
+2. Extract the compressed folder.
+3. Run the xampp control panel and start the apache and mysql
+4. Copy the extracted folder to htdocs
+5. Open the browser and type localhost/phpmyadmin
+6. import thesis.sql in the database folder
+7. Run the program by typing in any browser localhost/tech
+
+Note:
+This is just a simple program any updates or constructive criticism will be accepted.
+Download link:
+https://drive.google.com/file/d/0BxpiFQ5z7RUIZ2tmNklNZWkwcVk/view?usp=sharing
