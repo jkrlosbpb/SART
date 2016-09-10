@@ -32,15 +32,20 @@
     {
 	$oras = strtotime("now");
 	$ora = date("Y-m-d",$oras);
-	
 
 
 
-	
-    mysql_query("insert location_details (id,stdev_id,date_deployment) values('$id[$i]','$id_emp','$ora')")or die(mysql_error());
+
+	mysql_query('START TRANSACTION');
+    $a = mysql_query("insert location_details (stdev_id,id_emp,date_deployment) values('$id[$i]','$id_emp','$ora')")or die(mysql_error());
+    $b = mysql_query("update stdevice set dev_status='Asignado' where id = '$id[$i]'")or die(mysql_error());
     //Inserta en la tabla asignados
-    mysql_query("insert asignados (id_emp, id_dev) values('$id_emp', '$id[$i]')")or die(mysql_error());
-	
+    $c = mysql_query("insert asignados (id_emp, id_dev) values('$id_emp', '$id[$i]')")or die(mysql_error());
+	if($a && $b && $c) {
+		mysql_query('COMMIT');
+	}else{
+		mysql_query('ROLLBACK');
+	}
 	
 	
 	mysql_query("insert into activity_log (date,username,action) values(NOW(),'$admin_username','Assign Device id $id[$i] to location id $stdev_id')")or die(mysql_error());
